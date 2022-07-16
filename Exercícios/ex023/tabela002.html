@@ -18,11 +18,19 @@
             text-align: center;
             -webkit-text-stroke: 1px white;
         }
+        caption{
+            font-weight: bolder;
+            padding: 10px;
+            -webkit-text-stroke: 0.7px white;
+            font-size: 1.5em;
+            background-color: lightblue;
+        }
         table{
             border-collapse: collapse;
             margin: auto;
             background-color: white;
             box-shadow: 10px -10px 30px black;
+            position: relative;
         }
         td, th{
             border: 1px solid black;
@@ -33,6 +41,20 @@
         thead, tfoot{
             background-color: gray;
             color: white;
+        }
+        thead > tr > th{
+            position: sticky;
+            top: -1px;
+            background-color: gray;
+        }
+        tbody > tr:nth-child(even){
+            background-color: lightgray;
+        }
+        tbody > tr:nth-child(odd){
+            background-color: white;
+        }
+        tbody > tr:nth-child(3n){
+            background-color: lightgreen;
         }
         footer{
             background-image: linear-gradient(to right, gray, black);
@@ -58,6 +80,7 @@
     <!--
         ANATOMIA PARA TABELAS GRANDES
         TABLE
+            CAPTION
             THEAD
                 TR, TD, TH
             TBODY
@@ -66,15 +89,16 @@
                 TR, TD, TH
     -->
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
             <tr>
-                <th>Posição</th>
-                <th>Unidade Federativa</th>
-                <th>População (2010)</th>
-                <th>População (2021)</th>
-                <th>Mudança</th>
-                <th>% da população total</th>
-                <th>País comparável (habitantes)</th>
+                <th scope="col">Posição</th>
+                <th scope="col">Unidade Federativa</th>
+                <th scope="col">População (2010)</th>
+                <th scope="col">População (2021)</th>
+                <th scope="col">Mudança</th>
+                <th scope="col">% da população total</th>
+                <th scope="col">País comparável (habitantes)</th>
             </tr>
         </thead>
         <tbody>
@@ -323,7 +347,7 @@
             </tr>
         </tbody>
         <tfoot>
-            <th>Total de habitantes</th>
+            <th scope="row">Total de habitantes</th>
             <td colspan="6">213.317.639</td>
         </tfoot>
     </table>
